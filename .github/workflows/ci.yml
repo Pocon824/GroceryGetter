@@ -15,7 +15,7 @@ jobs:
       run:
         working-directory: backend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -32,7 +32,7 @@ jobs:
     outputs:
       exists: ${{ steps.check.outputs.exists }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - id: check
         run: |
           if [ -f frontend/package.json ]; then echo "exists=true" >> "$GITHUB_OUTPUT"; else echo "exists=false" >> "$GITHUB_OUTPUT"; fi
@@ -47,7 +47,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
