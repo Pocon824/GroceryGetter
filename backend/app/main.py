@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.routers import items
+
 app = FastAPI(title="GroceryGetter API", version="0.1.0")
 
 # The Angular dev server runs on :4200.
@@ -10,6 +12,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(items.router)
 
 
 @app.get("/api/health")
