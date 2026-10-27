@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "Angular.ng-template",
+    "charliermarsh.ruff",
+    "ms-python.python",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
+  ]
+}
