@@ -1,0 +1,7 @@
+<ul>
+    @for (item of items; track item.id) {
+        <li>
+            {{item.name}}: {{ item.price | currency: 'CAD' : 'symbol-narrow' }}
+        </li>
+    }
+</ul>
