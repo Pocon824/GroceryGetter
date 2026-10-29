@@ -1,7 +1,15 @@
-<ul>
-    @for (item of items; track item.id) {
-        <li>
-            {{item.name}}: {{ item.price | currency: 'CAD' : 'symbol-narrow' }}
-        </li>
-    }
-</ul>
+
+@if (items(); as list) {
+    <ul>
+        @for (item of list; track item.id) {
+            <li>
+                {{ item.name }}
+            </li>
+        } @empty {
+            <li>No items found.</li>
+        }
+    </ul>
+}
+    @else {
+        <p>Loading items...</p>
+    }    
