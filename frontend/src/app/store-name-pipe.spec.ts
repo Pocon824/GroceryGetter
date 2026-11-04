@@ -6,3 +6,12 @@ describe('StoreNamePipe', () => {
     expect(pipe).toBeTruthy();
   });
 });
+
+describe('storeNamePipe', () => {
+    it('should transform foodbasics to Food Basics', () => {
+    const pipe = new StoreNamePipe();
+    const storeName = 'foodbasics';
+    const transformedName = pipe.transform(storeName);
+    expect(transformedName).toBe('Food Basics');
+  });
+});
