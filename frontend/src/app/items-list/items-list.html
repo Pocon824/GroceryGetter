@@ -3,7 +3,13 @@
     <ul>
         @for (item of list; track item.id) {
             <li>
-                {{ item.name }}
+                Item Name: {{ item.name }}, 
+                Latest Price: @if (item.latest_price == null) {
+                    No price found
+                } @else {
+                    {{ item.latest_unit_price | currency: 'CAD' : 'symbol-narrow' }}
+                }
+                at {{ item.latest_store | storeName }}
             </li>
         } @empty {
             <li>No items found.</li>
