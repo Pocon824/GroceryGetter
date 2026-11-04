@@ -1,46 +1,41 @@
 # GroceryGetter
 
-GroceryGetter is a project aimed at tracking grocery prices over time, making shopping lists based on weekly flyers, and creating meal plans with real time inventory of your pantry.
-
 ![CI](https://github.com/Pocon824/GroceryGetter/actions/workflows/ci.yml/badge.svg)
 
-> Work in progress.
+GroceryGetter tracks grocery prices over time, builds shopping lists from weekly
+flyers, and plans meals around what's on sale and what's in the pantry.
+
+This is a personal project that doubles as a portfolio piece. To be clear about
+who did what:
+
+**Written by me**
+- Angular components, services, pipes and templates (TypeScript, HTML)
+- Frontend tests (Vitest)
+
+**AI-assisted (Claude)**
+- Backend API, database schema and seed data (Python, FastAPI, SQLite)
+- Backend tests (pytest)
+- CSS styling
+- CI/CD configuration, task specs and architecture docs
+
+## Status
+
+| Feature | State |
+|---|---|
+| Price history API with seeded sample data | Done |
+| Items list with live search | Done |
+| Item detail page and price chart | Planned |
+| Flyer and receipt extraction with the Claude API | Planned |
+| Pantry, meal plans, shopping lists | Planned |
+| End-to-end tests, Docker, live demo | Planned |
 
 ## Stack
 
-- **Frontend:** Angular + TypeScript (`frontend/`)
+- **Frontend:** Angular, TypeScript (`frontend/`)
 - **Backend:** Python, FastAPI, SQLite (`backend/`)
-- **Extraction:** Claude API reads flyer and receipt images into structured price data
-- **Tests:** pytest, Vitest (Angular), Playwright (`e2e/`)
+- **Tests:** Vitest, pytest
 - **CI:** GitHub Actions
 
 ## Getting started
 
 ### Backend
-
-```powershell
-cd backend
-py -3 -m venv .venv
-.venv\Scripts\Activate.ps1
-pip install -e ".[dev]"
-pytest
-uvicorn app.main:app --reload
-```
-
-API docs appear at http://127.0.0.1:8000/docs.
-
-### Frontend
-
-```powershell
-ng new frontend
-cd frontend
-ng serve
-```
-
-### Private data
-
-Copy `.env.example` to `.env` and add your API key. `.env`, `data/` and everything in `inbox/` are git-ignored.
-
-## License
-
-MIT
