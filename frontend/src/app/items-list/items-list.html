@@ -1,6 +1,15 @@
 
 @if (items(); as list) {
     <ul>
+        <label for="item-search">Search Items:</label>
+        <input
+        #box
+        id="item-search"
+        type="search"
+        placeholder="Search for items..."
+        (input)="query.set(box.value)" 
+        />
+
         @for (item of list; track item.id) {
             <li>
                 Item Name: {{ item.name }}, 
